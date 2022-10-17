@@ -25,7 +25,12 @@ def find_clumps(text, k, L, t):
     return patterns
 
 def main():
-    find_clumps()
+    test_text = 'gatcagcataagggtccCTGCAATGCATGACAAGCCTGCAGTtgttttac'
+    k = 4
+    L = 25
+    t = 3
+    patterns = find_clumps(test_text,k, L, t)
+    print(patterns)
 
 if __name__ == '__main__':
     main()
