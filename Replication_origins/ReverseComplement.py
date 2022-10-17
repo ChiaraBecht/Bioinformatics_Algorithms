@@ -1,5 +1,13 @@
 def reverse_complement_seq(DNA_seq):
     """
+    For a given DNA sequence find its reverse complement. This sequence is the complement sequence written out
+    in the same direction as the template strand.
+    
+    :param:
+        DNA_seq: the target sequence for which the reverse complement shall be computed
+    
+    :return:
+        rev_comp_DNA_seq: reverse complement of the entered sequence
     """
     base_pairings = {'a': 't', 't': 'a', 'c': 'g', 'g': 'c'}
     sequence = DNA_seq.lower()
