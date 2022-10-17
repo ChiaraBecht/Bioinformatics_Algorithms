@@ -1,6 +1,15 @@
 from collections import defaultdict
 def frequency_table(text, k):
     """
+    Create a frequency tables for all kmers in a given text. The kmers are the keys and their frequencies are stored
+    as the values..
+
+    :param:
+        text: string from which the kmers and their frequencies are to be determined
+        k: kmer length
+    
+    :return:
+        freq_dict: dictionary with all kmers and their frequencies
     """
     freq_dict = defaultdict(int)
     text_len = len(text)
@@ -9,12 +18,15 @@ def frequency_table(text, k):
         freq_dict[kmer] += 1
     return freq_dict
 
-test_text = 'aactactcatcatcatctcatgatgatagtagctagcgcatgacgttatactcatgcatcgatcgta'
-
-
-
 def max_map(freq_dict):
     """
+    Find the maximum frequency in the dictionary
+
+    :param:
+        freq_dict: dictionary with all kmers and their frequencies derived from  a text of interest
+    
+    :return:
+        max_value: maximum frequency detected
     """
     max_value = max(freq_dict.values())
     max_key = max(freq_dict, key = freq_dict.get)
@@ -23,6 +35,12 @@ def max_map(freq_dict):
 
 def better_frequent_words(text, k):
     """
+    Less computiational complex algorithm to detect the most frequent words in a text. 
+    :param:
+        text: text to be analysed
+        k: kmer length
+    :return:
+        freq_words: set of frequent words
     """
     freq_words = set()
     freq_map = frequency_table(text,k)
